@@ -4,18 +4,18 @@ public class CGPACalculation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Input Student ID
+        // Student ID
         System.out.print("Enter Student ID: ");
         String studentId = scanner.nextLine();
 
-        // Input number of courses
+        // Input of courses
         System.out.print("Enter the number of courses: ");
         int numCourses = scanner.nextInt();
 
         double totalCredits = 0;
         double totalGradePoints = 0;
 
-        // Process each course
+        // Each course
         for (int i = 1; i <= numCourses; i++) {
             System.out.println("Enter details for Course C" + i + ":");
 
@@ -23,7 +23,7 @@ public class CGPACalculation {
             System.out.print("Credit (Max 3): ");
             int credit = scanner.nextInt();
 
-            // Input Continuous Assessment Test (CT) marks
+            // Input class Test (CT) marks
             System.out.print("CT Marks (Max 30): ");
             int ctMarks = scanner.nextInt();
 
@@ -35,10 +35,10 @@ public class CGPACalculation {
             System.out.print("FE Marks (Max 60): ");
             int feMarks = scanner.nextInt();
 
-            // Total marks for the course
+            // Total marks of course
             int totalMarks = ctMarks + atMarks + feMarks;
 
-            // Calculate grade point based on total marks
+            // Calculate grade point of total marks
             double gradePoint;
             if (totalMarks >= 90) {
                 gradePoint = 10;
@@ -54,7 +54,7 @@ public class CGPACalculation {
                 gradePoint = 0; // Fail
             }
 
-            // Accumulate total credits and weighted grade points
+            // Total credits and grade points
             totalCredits += credit;
             totalGradePoints += gradePoint * credit;
         }
@@ -62,7 +62,7 @@ public class CGPACalculation {
         // Calculate CGPA
         double cgpa = totalGradePoints / totalCredits;
 
-        // Output results
+        // results
         System.out.println("\n--- Student Result ---");
         System.out.println("Student ID: " + studentId);
         System.out.println("Credit Taken: " + totalCredits);
